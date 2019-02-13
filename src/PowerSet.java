@@ -3,7 +3,7 @@ public class PowerSet {
 
 	public static void main(String[] args) {
 		int arr[] = {3, 6, 7, 1, 5, 4};
-//		method1(arr);
+		//		method1(arr);
 		method2(arr);
 	}
 
@@ -42,9 +42,12 @@ public class PowerSet {
 	}
 
 	public static void print(int[] arr) {
-		for(int a: arr) {
-			System.out.print(a+" ");
+		System.out.print("[");
+		for(int i = 0 ; i< arr.length; i++) {
+			if(flag[i]) {
+				System.out.print(arr[i] +" ");
+			}
 		}
-		System.out.println();
+		System.out.println("]");	
 	}
 }
