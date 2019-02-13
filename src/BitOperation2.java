@@ -1,26 +1,21 @@
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class BitOperation2 {
-	public static void main(String[] args) throws Exception{
-//		System.setIn(new FileInputStream("input.txt"));
+	public static void main(String[] args){
+		char[] arr= {'0','0','0','0','0','0','1','0','0','0','1','1','0','1'};
 		
-//		Scanner reader = new Scanner(System.in);
-//		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-//		String s = reader.readLine();
-		
-		for(int i=-5; i<6; i++) {
-			System.out.printf("%3d = ", i);
-			BbitPrint(i);
-			System.out.println();
-		}
+		char[] left = Arrays.copyOfRange(arr, 0, 7);
+		char[] right = Arrays.copyOfRange(arr, 7, 14);
+		System.out.println(convert(left)+", "+convert(right));
 	}
 
-	static void BbitPrint(int i) {
-		for(int j=7; j>=0; j--) {
-			System.out.printf("%d", (i&(1<<j)) != 0 ? 1:0);
+	static int convert(char[] arr) {
+		int val=0;
+		for(int i=arr.length-1; i>=0; i--) {
+			if(arr[i]=='1') {
+				val+=Math.pow(2, 6-i);
+			}
 		}
+		return val;
 	}
 }
