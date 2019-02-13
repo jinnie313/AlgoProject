@@ -12,7 +12,7 @@ public class PermTest {
 		}
 		
 		for(int i=pivot; i<arr.length; i++) {
-			System.out.println("i: " + i+"      pivot: " +pivot);
+			System.out.println("i: " + i+"     pivot: " +pivot);
 			swap(arr, i, pivot);
 			perm(arr, pivot+1);
 			swap(arr, i, pivot);
