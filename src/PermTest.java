@@ -1,10 +1,8 @@
 
 public class PermTest {
-	static int count=0;
 	public static void main(String[] args) {
 		char[] arr = {'A', 'B', 'C', 'D'};
 		perm(arr, 0);
-		
 	}
 	
 	public static void perm(char[] arr, int pivot) {
