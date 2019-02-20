@@ -2,8 +2,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Stack;
 
-import DFSTestRecursive.Graph;
-
 public class DFSTestRepeat {
 	public static void main(String[] args) {
 		//그래프 생성
