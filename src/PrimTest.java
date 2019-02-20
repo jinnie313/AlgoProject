@@ -82,6 +82,9 @@ public class PrimTest {
 		System.out.print(start + " ");
 		
 		while(!pq.isEmpty()) {
+			if(cnt == 7-1) {
+				break;
+			}
 			tempNode = pq.poll();
 			
 			if(visit[tempNode.data])	continue;
@@ -96,7 +99,6 @@ public class PrimTest {
 				pq.offer(datas2.next());
 			}
 		}
-		
 		System.out.println("\n" + sum + "\n" + cnt);
 	}
 	static class Node implements Comparable<Node>{
