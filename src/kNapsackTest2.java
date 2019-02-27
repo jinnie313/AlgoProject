@@ -1,12 +1,12 @@
 // dfs 적용 사례
 public class kNapsackTest2 {
 	static int[][] items = {
-			{10,5},{40,4},{30,6},{50,3}
+			{0,0}, {10,5},{40,4},{30,6},{50,3}
 	};
-	static int N =4;
+	static int N =5;
 	static int K[][];
 	public static void main(String[] args) {
-		int capacity = 10;
+		int capacity = 10+1;
 		K = new int[N][capacity];
 		for(int i = 1; i < N; i++) {
 			for(int w = 1; w < capacity; w++) {
