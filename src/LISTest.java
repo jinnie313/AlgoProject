@@ -1,10 +1,31 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LISTest {
 	public static void main(String[] args) {
 		int[] arr = {3,2,6,4,5,1};
-		lis1(arr);
+//		lis1(arr);
+		list2(arr);
 	}
+	
+	static void list2(int[] arr) {
+		int[] LIS = new int[arr.length];
+		
+		Arrays.fill(LIS, 1);
+		
+		for(int i=1; i<arr.length; i++) {
+			for(int j=0; j<i; j++) {
+				if(arr[j]<arr[i] && LIS[j]+1 > LIS[i]) {
+					LIS[i] = LIS[j] + 1;
+				}
+			}
+		}
+		
+		System.out.println(Arrays.toString(LIS));
+		int max = Arrays.stream(LIS).max().getAsInt();
+		System.out.println(max);
+	}
+	
 	static void lis1(int[] arr) {
 		int size = 1 <<arr.length;	
 		int max = 1;
